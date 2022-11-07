@@ -1,5 +1,7 @@
 package com.warehouse.warehouseproject.model;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 import java.util.List;
 import java.util.Set;
@@ -11,9 +13,11 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long order_id;
 
+    @Column(name = "user_id")
+    private @NotNull Integer userId;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id", referencedColumnName = "user_id", insertable = false, updatable = false)
+    @JoinColumn(name = "user_id", referencedColumnName = "id", insertable = false, updatable = false)
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)

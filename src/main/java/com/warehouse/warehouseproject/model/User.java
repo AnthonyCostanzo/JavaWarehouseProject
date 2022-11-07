@@ -9,7 +9,7 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long user_id;
+    private long id;
 
     @OneToMany(mappedBy = "user")
     private List<Order> orders;
@@ -41,12 +41,12 @@ public class User {
     private String password;
 
     public long getUserId() {
-        return user_id;
+        return id;
     }
 
 
     public void setUserId(long userId) {
-        this.user_id = userId;
+        this.id = userId;
     }
 
     public String getEmail() {
@@ -67,8 +67,8 @@ public class User {
 
     public User(){};
 
-    public User(long userId, String email, String password) {
-        this.user_id = userId;
+    public User(long id, String email, String password) {
+        this.id = id;
         this.email = email;
         this.password = password;
     }
