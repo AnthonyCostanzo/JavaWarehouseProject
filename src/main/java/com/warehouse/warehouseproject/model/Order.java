@@ -14,14 +14,14 @@ public class Order {
     private Long order_id;
 
     @Column(name = "user_id")
-    private @NotNull Integer userId;
+    private @NotNull long userId;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", referencedColumnName = "id", insertable = false, updatable = false)
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
-    @JoinColumn(name = "order_id",referencedColumnName = "order_id",insertable = false,updatable = false)
+    @JoinColumn(name = "order_item_id",referencedColumnName = "order_id",insertable = false,updatable = false)
     private List<OrderItem> orderItems;
 
 
