@@ -29,6 +29,7 @@ public class OrderItem {
     private Date createdDate;
 
     @ManyToOne
+    @JoinColumn(name = "id",referencedColumnName = "order_id",insertable = false,updatable = false)
     private Order order;
 
     @OneToOne
