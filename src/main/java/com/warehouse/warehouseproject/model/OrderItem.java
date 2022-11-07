@@ -45,6 +45,7 @@ public class OrderItem {
         this.order_id=orderId;
         this.createdDate = new Date();
     }
+    //getter and setter are removed for sake of brevity
 
 }
 
