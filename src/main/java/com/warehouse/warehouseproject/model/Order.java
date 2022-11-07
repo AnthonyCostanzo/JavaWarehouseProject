@@ -21,7 +21,7 @@ public class Order {
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
-    @JoinColumn(name = "order_item_id",referencedColumnName = "order_id",insertable = false,updatable = false)
+    @JoinColumn(name = "order_id",referencedColumnName = "order_id",insertable = false,updatable = false)
     private List<OrderItem> orderItems;
 
 
